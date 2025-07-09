@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kamu Kena Prank!</title>
+  <script>
+    let count = 0;
+
+    // Spam alert terus menerus
+    function spamAlert() {
+      alert("🤣 HAHAHA! Kamu kena prank!");
+      count++;
+      if (count < 100) {
+        setTimeout(spamAlert, 500); // spam tiap 0.5 detik
+      } else {
+        alert("Capek? Masih lanjut kok 😈");
+        spamAlert();
+      }
+    }
+
+    // Cegah keluar dari halaman
+    window.onbeforeunload = function () {
+      return "Yakin mau keluar? Masih seru loh!";
+    };
+
+    // Cegah klik kanan dan tombol-tombol umum
+    document.addEventListener("contextmenu", e => e.preventDefault());
+    document.addEventListener("keydown", e => e.preventDefault());
+
+    // Play musik troll
+    function playMusic() {
+      let audio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
+      audio.loop = true;
+      audio.play();
+    }
+
+    window.onload = () => {
+      spamAlert();
+      playMusic();
+    };
+  </script>
+</head>
+<body style="background:black; color:lime; text-align:center; font-size:30px; padding-top:100px;">
+  <h1>😜 WELCOME TO PRANK ZONE!</h1>
+  <p>Selamat menikmati... 😈</p>
+</body>
+</html>
